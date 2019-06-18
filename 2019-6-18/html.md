@@ -13,8 +13,11 @@
 
 - 事件坐标实现
 
- - 具体实现：// 获取目标元素
+ - 具体实现：
+ 
+    <script>
 
+    // 获取目标元素
     var box = document.getElementById('box');
 
     // 对目标元素target的圆形区域进行一个点击事件绑定
@@ -46,10 +49,14 @@
     bindClickOnCircleArea(box, function () {
         alert('xxx');
     });
+
+    </script>
+
 - map + area
 
- - 具体实现：<img src="../imgs/test.jpg" width="200" border="0" usemap="#Map" />
+ - 具体实现：
 
+    <img src="../imgs/test.jpg" width="200" border="0" usemap="#Map" />
     <map name="Map" id="Map">
     <area shape="circle" coords="100,100,100" href="http://www.baidu.com" target="_blank" />
     </map>
@@ -59,12 +66,14 @@
 你认为table布局的优缺点是什么？
 
 - 优点：兼容性好，内容可自适应，有利于搜索引擎优化
+
 - 缺点：table比其他html占用字节更多（延迟下载时间，占用服务器更多流量资源）
         table会阻挡浏览器渲染引擎的渲染顺序，只有当数据全部加载完成才会显示在页面
 
 元素属性alt和title的区别
 
 - alt用于用于图像无法显示或在用户禁止图像显示时代替图像在浏览器中的显示的内容
+
 - title用于当鼠标移至元素上时，显示额外的提示信息
 
 title与h1的区别、b与strong的区别、i与em的区别？
