@@ -81,3 +81,42 @@ typeof('abc')和typeof 'abc'都是string, 那么typeof是操作符还是函数�
     <button id="test" style="position:fixed;right:0;bottom:0">回到顶部</button>
     <script>test.onclick = function(){target.scrollIntoView();} </script>
     </body>
+
+写一个数组去重的方法（支持多维数组)
+
+- 具体实现:
+
+<script>function flat(arr, target) {
+  arr.forEach(item => {
+    if (Array.isArray(item)) {
+      flat(item, target)
+    } else {
+      target.push(item)
+    }
+  })
+}
+
+function flatArr(arr) {
+  let result = []
+  
+  flat(arr, result)
+  
+  return result
+}
+
+function uniqueArr(arr) {
+  return [...new Set(flatArr(arr))]
+}
+
+const result = uniqueArr([1, 2, 3, 4, [3, 4, [4, 6]]])
+console.log(result)
+</script>
+
+
+ 什么是闭包？优缺点分别是什么？
+
+ - 解释：简单的解释为闭包就是定义在函数内部的函数且调用父函数的变量
+
+ - 优点：可以在函数外部访问函数内部的局部变量，在调用函数结束后，变量的值不会被自动清除
+
+ - 缺点：大量使用闭包对内存的消耗很大，降低浏览器的性能，在IE中还可能造成内存泄露，
